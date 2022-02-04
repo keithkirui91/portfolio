@@ -1,0 +1,53 @@
+.siteDiv{
+    position: absolute;
+    font-weight: 300;
+    font-size: 1rem;
+    left: 1rem;
+    color: whitesmoke;
+    z-index: 17;
+}
+.m-menu{
+    
+    font-family: cursive;
+    max-width: 100%;
+    text-align: center;
+    word-spacing: .5rem;
+    height: 0rem;  
+    padding: .5rem;
+    z-index: 1;
+    
+    
+}
+a{
+    color: ivory;
+    font-weight: 800;
+    font-family: cursive;
+
+}
+a:hover{
+    border-radius: 6px;
+    color: #790a0a;
+    transition: .4s;
+}
+.current{
+    color: #790a0a;
+}
+.s-li{
+    background-color: rgb(0, 0, 0);
+    font-size: 1rem;
+    color: ivory;
+    width: 100%;
+    top: 0rem;
+    padding: .5rem;
+    left: 0rem;
+    position: absolute;
+}
+
+.drop:hover{
+    border-radius: 6px;
+    color: #790a0a;
+    transition: .3s;
+    cursor: pointer;
+    font-weight: bolder;
+
+}
