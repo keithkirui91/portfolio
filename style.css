@@ -151,6 +151,13 @@ h1#name{
     height: 21rem;
     
 }
+.what-we-doB{
+    margin-top: 2rem;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    height: 21rem;
+    
+}
 .row{
     display: flex;
     flex-wrap: wrap;

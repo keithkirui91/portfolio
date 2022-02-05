@@ -66,3 +66,70 @@ function myTogglerThree(){
     newDivThree.style.display = "block";
   }
 }
+
+
+
+
+/*WHAT WE DO DIV */
+var newDivOneB = document.getElementById("newDivOneB");
+var newDivTwoB = document.getElementById("newDivTwoB");
+var newDivThreeB = document.getElementById("newDivThreeB");
+
+newDivOneB.style.display = "none";
+newDivTwoB.style.display = "none";
+newDivThreeB.style.display = "none";
+
+
+function myTogglerOne(){
+    var myDivOneB = document.getElementById("myDivOneB");
+    if (myDivOneB.style.display === "none") {
+      myDivOneB.style.display = "block";
+      newDivOneB.style.display = "none";
+  
+    } 
+    else {
+      myDivOneB.style.display = "none";
+      newDivOneB.style.display = "block";
+    }
+}
+
+function myTogglerTwo(){  
+  var myDivTwoB = document.getElementById("myDivTwoB");
+  if (myDivTwoB.style.display === "none") {
+    myDivTwoB.style.display = "block";
+    newDivTwoB.style.display = "none";
+
+  } 
+  else {
+    myDivTwoB.style.display = "none";
+    newDivTwoB.style.display = "block";
+  }
+}
+
+
+function myTogglerThree(){
+  var myDivThreeB = document.getElementById("myDivThreeB");
+  if (myDivThreeB.style.display === "none") {
+    myDivThreeB.style.display = "block";
+    newDivThreeB.style.display = "none";
+
+  } 
+  else {
+    myDivThreeB.style.display = "none";
+    newDivThreeB.style.display = "block";
+  }
+}
+
+
+function myTogglerFour(){
+  var myDivFourB = document.getElementById("myDivFourB");
+  if (myDivFourB.style.display === "none") {
+    myDivFourB.style.display = "block";
+    newDivFourB.style.display = "none";
+
+  } 
+  else {
+    myDivFourB.style.display = "none";
+    newDivFourB.style.display = "block";
+  }
+}
