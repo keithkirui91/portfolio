@@ -145,15 +145,15 @@ h1#name{
     margin-left: .5rem;
 }
 .what-we-do{
-    margin-top: 10rem;
-    background-color: rgb(255, 255, 255);
+    margin-top: 5rem;
+    background-color: rgb(252, 252, 252);
     color: rgb(0, 0, 0);
     height: 21rem;
     
 }
 .what-we-doB{
     margin-top: 2rem;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
     color: rgb(0, 0, 0);
     height: 21rem;
     
@@ -165,8 +165,9 @@ h1#name{
     
 }
 .first-col{
-    background-color: rgb(255, 255, 255);
-    
+    background-color: rgb(0, 0, 0);
+    color: rgb(133, 132, 131);
+    font-family: cursive;
 
 }
 .first-col:hover{
@@ -174,9 +175,9 @@ h1#name{
 }
 
 .whatwedo-img{
-    height: 4.5rem;
-    width: 4.5rem;
-
+    height: 14rem;
+    width: 19.3rem;
+    border-radius: 5px;
 }
 .row .column{
     flex: 20%;
@@ -211,6 +212,10 @@ h3{
 #fsub{
     color: grey;
 }
+.divsB{
+    background-color: black;
+}
+
 #contactS{
     display: none;
 
@@ -218,7 +223,7 @@ h3{
 }
 
 /*FOOTER*/
-h3{
+h3#contact{
     padding-left: 2.4rem;
     font-size: 1.4rem;
     margin-bottom: -.5rem;
@@ -274,7 +279,7 @@ footer{
     max-width: 120%;
     background: rgb(0, 0, 0);
     text-align: center;
-    padding: 6rem;
+    padding: 1rem;
     color: #FFF;
     margin: 0;
 }
