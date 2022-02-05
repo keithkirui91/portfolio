@@ -91,9 +91,25 @@ section{
 }
 
 
+#nameS{
+    background-color: black;
+    color: red;
+}
+h1#nameS{
+    font-size: 10rem;
+}
+#aboutS{
 
+}
+#projectsS{
 
+}
+#fprojectsS{
 
+}
+#contactS{
+
+}
 
 /*FOOTER*/
 h3{
