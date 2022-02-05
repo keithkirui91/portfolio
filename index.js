@@ -74,13 +74,15 @@ function myTogglerThree(){
 var newDivOneB = document.getElementById("newDivOneB");
 var newDivTwoB = document.getElementById("newDivTwoB");
 var newDivThreeB = document.getElementById("newDivThreeB");
+var newDivFourB = document.getElementById("newDivFourB");
 
 newDivOneB.style.display = "none";
 newDivTwoB.style.display = "none";
 newDivThreeB.style.display = "none";
+newDivFourB.style.display = "none";
 
 
-function myTogglerOne(){
+function myTogglerOneB(){
     var myDivOneB = document.getElementById("myDivOneB");
     if (myDivOneB.style.display === "none") {
       myDivOneB.style.display = "block";
@@ -93,7 +95,7 @@ function myTogglerOne(){
     }
 }
 
-function myTogglerTwo(){  
+function myTogglerTwoB(){  
   var myDivTwoB = document.getElementById("myDivTwoB");
   if (myDivTwoB.style.display === "none") {
     myDivTwoB.style.display = "block";
@@ -107,7 +109,7 @@ function myTogglerTwo(){
 }
 
 
-function myTogglerThree(){
+function myTogglerThreeB(){
   var myDivThreeB = document.getElementById("myDivThreeB");
   if (myDivThreeB.style.display === "none") {
     myDivThreeB.style.display = "block";
@@ -121,7 +123,7 @@ function myTogglerThree(){
 }
 
 
-function myTogglerFour(){
+function myTogglerFourB(){
   var myDivFourB = document.getElementById("myDivFourB");
   if (myDivFourB.style.display === "none") {
     myDivFourB.style.display = "block";
