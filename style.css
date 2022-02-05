@@ -270,6 +270,7 @@ ul{
 footer{
     font-family: cursive;
     height: 21rem;
+    line-height: .8rem;
     max-width: 120%;
     background: rgb(0, 0, 0);
     text-align: center;
