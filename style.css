@@ -1,8 +1,6 @@
 html{
     scroll-behavior: smooth;
     width: 101%;
-
-    color: blanchedalmond;
 }
 
 
@@ -90,7 +88,7 @@ ul#menu li{
 #nameS{
     background-color: black;
     color: red;
-    height: 35rem;
+    height: 37rem;
     margin-left: -.45rem;
     width: 101%;
     
@@ -115,7 +113,7 @@ h1#name{
     margin-top: 7rem;
 }
 #aboutS{
-    height: 35rem;
+    height: 37rem;
     margin-left: -.45rem;
     width: 101%;
     background-color: rgb(112, 112, 112);
@@ -123,28 +121,44 @@ h1#name{
 }
 #Ahead{
     margin: 0;
+    padding-top: 7rem;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 #ap{
-    margin-top: 5rem;
-    left: auto;
-    right: auto;
+    top: 5rem;
+    margin-left: 3rem;
+    text-align: center;
 }
 #projectsS{
-    height: 35rem;
+    height: 37rem;
     margin-left: -.45rem;
     width: 101%;
 
+}
+#phead{
+    font-size: 7rem;
+    color: white;
 }
 #fprojectsS{
     height: 35rem;
     margin-left: -.45rem;
     width: 101%;
-    
+    background-color: black;
+}
 
+#fhead{
+    color: green;
+    font-family: fantasy;
+    font-size: 9rem;
+    margin: 0;
+}
+#fsub{
+    color: grey;
 }
 #contactS{
+
 
 }
 
