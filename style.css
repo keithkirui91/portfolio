@@ -94,9 +94,24 @@ section{
 #nameS{
     background-color: black;
     color: red;
+    
 }
-h1#nameS{
-    font-size: 10rem;
+h1#name{
+    font-size: 7rem;
+    font-family:monospace;
+    margin-top: .5rem;
+    padding-top: 4rem;
+   
+}
+#subname{
+    font-size: 1.2rem;
+    font-family:monospace;
+    margin-top: -7rem;
+   
+}
+#title{
+    font-size: 2.5rem;
+    margin-top: 7rem;
 }
 #aboutS{
 
