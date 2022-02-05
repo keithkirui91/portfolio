@@ -1,3 +1,8 @@
+html{
+    scroll-behavior: smooth;
+}
+
+
 button{
     top: 1rem;
     margin-left: 80%;
@@ -117,7 +122,7 @@ h3{
 .btm-listrt{
     position: absolute;
     color: rgb(201, 190, 190);
-    right: 16rem;
+    right: 4rem;
     text-align: center;
     text-decoration: none;
     z-index: 1;
@@ -151,7 +156,7 @@ footer{
 
 .f-text{
     text-align: center;
-    padding: 1rem;
+    padding: .5rem;
     font-size: 1.1rem;
     font-weight: lighter;
     color: snow;
@@ -322,14 +327,14 @@ a{
     }
     
     .btm-listrt{
-        margin-top: 18rem;
+        margin-top: 11rem;
         left: .5rem;
         text-align: left;
         
         
     }
     .btm-listrtl{
-        margin-top: 33rem;
+        margin-top: 14rem;
         width: 100%;
         text-align: left;
         left: 0rem;
@@ -344,7 +349,7 @@ a{
     
     }
     .signup{
-        margin-top: 43rem;
+        margin-top: 20rem;
     }
     .submit-btn{
         margin-top: 1rem;
@@ -359,7 +364,7 @@ a{
 
 @keyframes fadeDown{
     0%{
-        transform: translateY(-.1rem);
+        transform: translateY(-1rem);
         opacity: 0;
 
     }
