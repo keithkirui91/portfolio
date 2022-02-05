@@ -1,5 +1,8 @@
 html{
     scroll-behavior: smooth;
+    width: 101%;
+
+    color: blanchedalmond;
 }
 
 
@@ -84,16 +87,12 @@ ul#menu li{
 
 
 
-
-
-section{
-    height: 30rem;
-}
-
-
 #nameS{
     background-color: black;
     color: red;
+    height: 35rem;
+    margin-left: -.45rem;
+    width: 101%;
     
 }
 h1#name{
@@ -106,20 +105,43 @@ h1#name{
 #subname{
     font-size: 1.2rem;
     font-family:monospace;
+    margin: .5rem;
     margin-top: -7rem;
    
 }
 #title{
+    font-family: monospace;
     font-size: 2.5rem;
     margin-top: 7rem;
 }
 #aboutS{
-
+    height: 35rem;
+    margin-left: -.45rem;
+    width: 101%;
+    background-color: rgb(112, 112, 112);
+    
+}
+#Ahead{
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+#ap{
+    margin-top: 5rem;
+    left: auto;
+    right: auto;
 }
 #projectsS{
+    height: 35rem;
+    margin-left: -.45rem;
+    width: 101%;
 
 }
 #fprojectsS{
+    height: 35rem;
+    margin-left: -.45rem;
+    width: 101%;
+    
 
 }
 #contactS{
@@ -172,6 +194,7 @@ h3{
 }
 ul{
     display: inline-block;
+    margin: 0;
 }
 
 
