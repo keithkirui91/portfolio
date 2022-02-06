@@ -4,7 +4,7 @@ html{
 }
 
 
-button{
+#tbutton{
     top: 1rem;
     margin-left: 80%;
     background-color: rgb(116, 116, 116);
@@ -88,7 +88,7 @@ ul#menu li{
 #nameS{
     background-color: black;
     color: red;
-    height: 37rem;
+    height: 33rem;
     margin-left: -.45rem;
     width: 101%;
     
@@ -117,7 +117,8 @@ h1#name{
     height: 37rem;
     margin-left: -.45rem;
     width: 101%;
-    background-color: rgb(112, 112, 112);
+    background-color: rgb(0, 0, 0);
+    color: #575555;
     
 }
 #Ahead{
@@ -133,21 +134,21 @@ h1#name{
     text-align: center;
 }
 #projectsS{
-    height: 37rem;
+    height: 30rem;
     margin-left: -.45rem;
     width: 101%;
-
+    background-color: black;
 }
 #phead{
-    font-size: 4rem;
+    font-size: 2.7rem;
     color: rgb(255, 0, 0);
     margin: 0;
     margin-left: .5rem;
 }
 .what-we-do{
     margin-top: 5rem;
-    background-color: rgb(252, 252, 252);
-    color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     height: 21rem;
     
 }
@@ -186,8 +187,9 @@ h1#name{
 .row .column{
     flex: 20%;
     width: auto;
-    height: 10rem;
+    height: 20rem;
     text-align: center;
+    
     
 }
 
@@ -211,20 +213,18 @@ h3{
     color: green;
     font-family: fantasy;
     font-size: 9rem;
-    margin: .5rem;
+    margin: 0;
+    margin-left: .5rem;
 }
 #fsub{
     color: grey;
+    margin-top: -1rem;
+    margin-bottom: 2.3rem;
 }
 .divsB{
     background-color: black;
 }
 
-#contactS{
-    display: none;
-
-
-}
 
 /*FOOTER*/
 h3#contact{
@@ -259,6 +259,11 @@ h3#contact{
     z-index: 1;
     font-size: 1rem;
     
+}
+#resume{
+    width: 10rem;
+    height: 2rem;
+    border-radius: 2px;
 }
 .btm-listrtl{
     position: absolute;
