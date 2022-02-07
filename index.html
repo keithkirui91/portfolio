@@ -7,6 +7,7 @@
     <title>portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <div id="hero"></div>
     <a href="index.html" class="href">
         <div class="siteDiv"><i>Full stack Developer</i></div>
@@ -57,15 +58,15 @@
 <body>
     <section id="nameS">
       <p style="color: rgb(255, 255, 255); margin: 0; padding-top: 8rem; margin-left: .5rem; margin-bottom: -1rem;">My name is...</p>
-    <h1 id="name">Keith Siele</h1>
+    <h1 id="name" data-aos="flip-down">Keith <span id="siele">Siele</span></h1>
     <br>
     <p id="subname">Arap Kirui</p>
-    <h4 id="title">Full-Stack Dev</h4>
+    <h4 id="title" data-aos="fade-up">Full-Stack Dev</h4>
 </section>
 
 <section id="aboutS">
     <div class="ahead">
-    <h1 id="Ahead">ABOUT</h1></div>
+    <h1 id="Ahead" data-aos="flip-up">ABOUT ME</h1></div>
     <p id="ap">Hi,i'm a full-stack developer. I design interactive <br>UI which are fully responsive. Located in the Kenya.<br>
       My skill set is a combination of self teaching and coding bootcamps.<br>
       In 2021 I attended the <a target="_blank" href="https://moringaschool.com" class=""> <span style="color: green; font-weight: 300;">Moringa school </span></a> code camp.<br>
@@ -75,11 +76,11 @@
 <div class="languages"></div>
 </section>
 
-<section id="projectsS">
-    <h1 id="phead">&#60 Projects &#62</h1>
+<section id="projectsS" >
+    <h1 id="phead"data-aos="fade-right">&#60 Projects &#62</h1>
     <section class="what-we-do">
         
-        <div class="container">
+        <div class="container" >
 
             <div class="row ">
 
@@ -93,7 +94,7 @@
                   
                   </h4>
                   <p>
-                    with working RSVP <br>
+                  With working RSVP <br>
                   mail handled by mailchimp API <br>
                   Tech: html ,css ,js
                   </p>
@@ -113,7 +114,7 @@
                   <h4>Dog breeder site</h4>
                   <p>
                     Website for a Kenyan Dog breeder<br>
-                    Tech:html ,css ,js
+                    Tech: html ,css ,js
                   </p>
                   <p>
                     <a target="_blank" href="https://magimakennels.com" class="">Live site</a>
@@ -133,7 +134,7 @@
                   Scrum project for moringa bootcamp<br>
                   Payment by m-pesa<br>
                   Get ur favorite kicks 25% off<br>
-                  Tech:html ,css ,js
+                  Tech: html ,css ,js
                 </p>
                 <p>
                   <a target="_blank" href="https://keithkirui91.github.io/winvite/" class="">Live site</a>
@@ -149,12 +150,12 @@
 
 </section>
 
-<section id="fprojectsS">
-    <a target="_blank" href="https://moringaschool.com" class=""> <h1 id="fhead">Moringa.</h1></a>
+<section id="fprojectsS" >
+    <a target="_blank" href="https://moringaschool.com" class=""> <h1 data-aos="fade-right"id="fhead">Moringa.</h1></a>
     <h2 id="fsub" style="color: green;"> //foundation projects</h2>
     <section class="what-we-doB">
         
-        <div class="container">
+        <div class="container" data-aos="flip-up">
 
             <div class="row ">
 
@@ -167,7 +168,7 @@
                   <h4>Ghanian naming based on your day of birth</h4>
                   <p>
                    Get to know yours<br>
-                   Tech:html ,css ,js
+                   Tech: html ,css ,js
                   </p>
                   <p>
                     <a target="_blank" href="https://keithkirui91.github.io/Week2Project/" class="">Live site</a>
@@ -185,7 +186,7 @@
                   <h4>Boot camp work</h4>
                   <p>
                     Delani studios website clone<br>
-                    ech:html ,css ,js
+                    Tech: html ,css ,js
                   </p>
                   <p>
                     <a target="_blank" href="https://keithkirui91.github.io/week3project/" class="">Live site</a>
@@ -203,10 +204,10 @@
               <div id="newDivThreeB">
                 <h4>The Marathon pizza shop</h4>
                 <p>
-                  concept website with styleing<br>
+                  Concept website with styleing<br>
                   based on the marathon clothing<br>
                   open 25/8<br>
-                  Tech:html ,css ,js
+                  Tech: html ,css ,js
                 </p>
                 <p>
                   <a target="_blank" href="https://keithkirui91.github.io/week4Project/" class="">Live site</a>
@@ -219,10 +220,10 @@
                <h3>About</h3>
               </div>
               <div id="newDivFourB" >
-                <h4>boot camp work</h4>
+                <h4>Boot camp work</h4>
                 <p>
-                  individual description<br>
-                  Tech:html ,css
+                  Individual description<br>
+                  Tech: html ,css
                 </p>
                 <p>
                   <a target="_blank" href="https://keithkirui91.github.io/week1project/" class="">Live site</a>
@@ -273,26 +274,42 @@
  <div class="f-text" data-aos="flip-up">||</div>
  <div class="f-text" data-aos="flip-up">leave your details and i'll get in touch with you</div>
 <!-- Begin Mailchimp Signup Form -->
-<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+
 
 <div id="mc_embed_signup">
-    <form action="https://magimakennels.us6.list-manage.com/subscribe/post?u=dcba3ced936676e11b9182c04&amp;id=e6cf4028ed" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    <div id="mc_embed_signup_scroll" id="form" data-aos="zoom-in">
-        <div class="mc-field-group">
-            <label for="mce-FNAME"></label>
-            <input type="text" value="" name="FNAME"  id="mce-FNAME" placeholder="Name" required>
-        </div>
-        <br>
-	<label for="mce-EMAIL"></label>
-	<input type="email" value="" name="EMAIL"  id="mce-EMAIL" placeholder="Email address" required>
-    
-    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_922a4af04c50bd657ec3fc125_4956194270" tabindex="-1" value=""></div><br>
-    <div class="clear"><input type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="submit-btn"></div>
-    </div>
-</form>
-</div>
+  <form
+      action="https://delanistudiosinc.us6.list-manage.com/subscribe/post?u=922a4af04c50bd657ec3fc125&amp;id=4956194270"
+      method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+      target="_blank" novalidate>
+      <div id="mc_embed_signup_scroll">
+          <div class="mc-field-group">
+            
+              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="E-mail">
+          </div>
+          <div class="mc-field-group">
+           
+              <input type="text" value="" name="FNAME" class="required" id="mce-FNAME" placeholder="Message">
+          </div>
+         
+          <div id="mce-responses" class="clear foot">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+          </div>
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                  name="b_922a4af04c50bd657ec3fc125_4956194270" tabindex="-1" value=""></div>
+          <div class="optionalParent">
+              <div class="clear foot">
+                  <input type="submit" value="Send" name="subscribe" id="mc-embedded-subscribe" class="submit-btn">
 
+              </div>
+          </div>
+      </div>
+  </form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+<script
+  type='text/javascript'>(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'MMERGE2'; ftypes[2] = 'radio'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
 <!--End mc_embed_signup-->
  <br>
  
@@ -322,9 +339,9 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
   AOS.init({
-      offset: 200,
+      offset: 100,
       easing: 'ease',
-      duration: 1200
+      duration: 1300
 
   });
 </script>
