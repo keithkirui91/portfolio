@@ -119,7 +119,7 @@ h1#name{
 }
 #title{
     font-family: monospace;
-    color: #FFF;
+    color: rgb(161, 161, 161);
     font-size: 2.5rem;
     margin-top: 7rem;
     margin-left: .5rem;
@@ -145,7 +145,7 @@ h1#name{
 #ap{
     top: 5rem;
     text-align: center;
-    font-size: large;
+    font-size: 1.2rem;
     color: #6e6c6c;
 }
 #projectsS{
@@ -238,7 +238,7 @@ h3{
 #fsub{
     color: grey;
     font-family: monospace;
-    margin-top: -1rem;
+    margin-top: .5rem;
     margin-left: 1rem;
     margin-bottom: 2.3rem;
 }
