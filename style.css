@@ -79,6 +79,12 @@ ul#menu li{
     display: inline;
     padding: 1rem;
 }
+ul#skills li{
+    text-decoration: none;
+    list-style: none;
+    display: inline;
+    padding: 1rem;
+}
 .toggler{
     display: none;
 }
