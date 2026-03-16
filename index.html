@@ -346,84 +346,153 @@
 
     /* ══ PROJECTS ══ */
     #projects { background: var(--bg); }
+
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      overflow: hidden;
+      gap: 1.5rem;
       margin-bottom: 5rem;
     }
+
     .project-card {
       background: var(--bg2);
-      padding: 2rem;
-      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 10px;
       overflow: hidden;
-      transition: background 0.25s;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
       cursor: pointer;
       text-decoration: none;
-      display: block;
+      display: flex;
+      flex-direction: column;
       color: inherit;
+      position: relative;
     }
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--green);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s;
+    .project-card:hover {
+      border-color: var(--green);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,232,122,0.08);
     }
-    .project-card:hover { background: var(--bg3); }
-    .project-card:hover::before { transform: scaleX(1); }
+
+    /* image area */
+    .project-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      background: var(--bg3);
+    }
     .project-img {
       width: 100%;
-      aspect-ratio: 16/9;
+      height: 100%;
       object-fit: cover;
-      border-radius: 3px;
-      border: 1px solid var(--text-mute);
-      margin-bottom: 1.2rem;
-      opacity: 0.75;
-      transition: opacity 0.25s;
       display: block;
+      opacity: 0.7;
+      transition: opacity 0.3s, transform 0.4s;
     }
-    .project-card:hover .project-img { opacity: 1; }
-    .project-num {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--text-mute);
-      letter-spacing: 0.1em;
-      margin-bottom: 0.5rem;
+    .project-card:hover .project-img {
+      opacity: 1;
+      transform: scale(1.04);
     }
+    /* overlay on hover */
+    .project-img-wrap::after {
+      content: '↗';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--green);
+      background: rgba(8,12,16,0.55);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .project-card:hover .project-img-wrap::after { opacity: 1; }
+
+    /* no image fallback pattern */
+    .project-img-wrap.no-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg3);
+    }
+    .project-img-wrap.no-img::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,232,122,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,232,122,0.04) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* card body */
+    .project-body {
+      padding: 1.4rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+
     .project-title {
       font-family: var(--display);
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 0.6rem;
       letter-spacing: -0.01em;
+      line-height: 1.2;
     }
+
+    .project-num {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--green);
+      letter-spacing: 0.12em;
+      background: rgba(0,232,122,0.08);
+      border: 1px solid rgba(0,232,122,0.18);
+      padding: 2px 7px;
+      border-radius: 3px;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+
     .project-desc {
       font-size: 13px;
       color: var(--text-dim);
       line-height: 1.65;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.1rem;
+      flex: 1;
     }
-    .project-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.2rem; }
+
+    .project-tech { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 1.1rem; }
     .tech-tag {
       font-family: var(--mono);
       font-size: 10px;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--green-dim);
-      background: rgba(0,232,122,0.06);
-      border: 1px solid rgba(0,232,122,0.15);
+      background: rgba(0,232,122,0.05);
+      border: 1px solid rgba(0,232,122,0.14);
       padding: 3px 8px;
       border-radius: 3px;
     }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.9rem;
+      margin-top: auto;
+    }
+
     .project-links { display: flex; gap: 1rem; }
     .project-link {
       font-family: var(--mono);
@@ -433,9 +502,14 @@
       display: flex;
       align-items: center;
       gap: 4px;
+      letter-spacing: 0.04em;
       transition: color 0.2s;
     }
     .project-link:hover { color: var(--green); }
+    .project-link .arrow { transition: transform 0.2s; }
+    .project-link:hover .arrow { transform: translate(2px, -2px); }
+
+    /* ── FOUNDATION GRID ── */
     .sub-section-title {
       font-family: var(--mono);
       font-size: 11px;
@@ -446,15 +520,99 @@
       padding-bottom: 0.75rem;
       border-bottom: 1px solid var(--border);
     }
+
     .foundation-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      overflow: hidden;
+      gap: 1rem;
     }
+
+    /* foundation cards — more compact, horizontal image top */
+    .foundation-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .foundation-card:hover {
+      border-color: var(--green);
+      transform: translateY(-3px);
+    }
+    .foundation-img-wrap {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--bg3);
+      position: relative;
+    }
+    .foundation-img-wrap::after {
+      content: '↗';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--green);
+      background: rgba(8,12,16,0.6);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .foundation-card:hover .foundation-img-wrap::after { opacity: 1; }
+    .foundation-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0.65;
+      transition: opacity 0.3s, transform 0.4s;
+    }
+    .foundation-card:hover .foundation-img { opacity: 1; transform: scale(1.05); }
+    .foundation-body {
+      padding: 1rem 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .foundation-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.3rem;
+    }
+    .foundation-title {
+      font-family: var(--display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.4rem;
+      line-height: 1.2;
+    }
+    .foundation-desc {
+      font-size: 12px;
+      color: var(--text-dim);
+      line-height: 1.55;
+      flex: 1;
+      margin-bottom: 0.8rem;
+    }
+    .foundation-link {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--green-dim);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s;
+      margin-top: auto;
+    }
+    .foundation-link:hover { color: var(--green); }
 
     /* ══ FOOTER ══ */
     footer {
@@ -674,50 +832,74 @@
 
     <div class="projects-grid reveal">
       <a class="project-card" href="https://keithkirui91.github.io/winvite/" target="_blank">
-        <img src="img/invites.PNG" alt="Invites" class="project-img" onerror="this.style.display='none'">
-        <div class="project-num">01 / 03</div>
-        <h3 class="project-title">Invites</h3>
-        <p class="project-desc">Web-based event invitation platform with working RSVP mail handled via Mailchimp API.</p>
-        <div class="project-tech">
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">JS</span>
-          <span class="tech-tag">Mailchimp</span>
+        <div class="project-img-wrap">
+          <img src="img/invites.PNG" alt="Invites" class="project-img" onerror="this.closest('.project-img-wrap').classList.add('no-img');this.style.display='none'">
         </div>
-        <div class="project-links">
-          <a href="https://keithkirui91.github.io/winvite/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live 1 ↗</a>
-          <a href="https://keithkirui91.github.io/birthdayinvite/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live 2 ↗</a>
+        <div class="project-body">
+          <div class="project-header">
+            <h3 class="project-title">Invites</h3>
+            <span class="project-num">01</span>
+          </div>
+          <p class="project-desc">Web-based event invitation platform with working RSVP mail handled via Mailchimp API.</p>
+          <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JS</span>
+            <span class="tech-tag">Mailchimp</span>
+          </div>
+          <div class="project-footer">
+            <div class="project-links">
+              <a href="https://keithkirui91.github.io/winvite/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live 1 <span class="arrow">↗</span></a>
+              <a href="https://keithkirui91.github.io/birthdayinvite/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live 2 <span class="arrow">↗</span></a>
+            </div>
+          </div>
         </div>
       </a>
 
       <a class="project-card" href="https://magimakennels.com" target="_blank">
-        <img src="img/magima.PNG" alt="Magima K9" class="project-img" onerror="this.style.display='none'">
-        <div class="project-num">02 / 03</div>
-        <h3 class="project-title">Magima K9</h3>
-        <p class="project-desc">Full website for a Kenyan dog breeder — clean layout, mobile responsive, live on a custom domain.</p>
-        <div class="project-tech">
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">JS</span>
+        <div class="project-img-wrap">
+          <img src="img/magima.PNG" alt="Magima K9" class="project-img" onerror="this.closest('.project-img-wrap').classList.add('no-img');this.style.display='none'">
         </div>
-        <div class="project-links">
-          <a href="https://magimakennels.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live site ↗</a>
+        <div class="project-body">
+          <div class="project-header">
+            <h3 class="project-title">Magima K9</h3>
+            <span class="project-num">02</span>
+          </div>
+          <p class="project-desc">Full website for a Kenyan dog breeder — clean layout, mobile responsive, live on a custom domain.</p>
+          <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JS</span>
+          </div>
+          <div class="project-footer">
+            <div class="project-links">
+              <a href="https://magimakennels.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live site <span class="arrow">↗</span></a>
+            </div>
+          </div>
         </div>
       </a>
 
       <a class="project-card" href="https://keithkirui91.github.io/winvite/" target="_blank">
-        <img src="img/sneaker head.PNG" alt="Sneaker Heads" class="project-img" onerror="this.style.display='none'">
-        <div class="project-num">03 / 03</div>
-        <h3 class="project-title">Sneaker Heads</h3>
-        <p class="project-desc">Scrum-based shoe shopping site built during bootcamp. M-Pesa payment integration. 25% off kicks.</p>
-        <div class="project-tech">
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">JS</span>
-          <span class="tech-tag">M-Pesa</span>
+        <div class="project-img-wrap">
+          <img src="img/sneaker head.PNG" alt="Sneaker Heads" class="project-img" onerror="this.closest('.project-img-wrap').classList.add('no-img');this.style.display='none'">
         </div>
-        <div class="project-links">
-          <a href="https://keithkirui91.github.io/winvite/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live site ↗</a>
+        <div class="project-body">
+          <div class="project-header">
+            <h3 class="project-title">Sneaker Heads</h3>
+            <span class="project-num">03</span>
+          </div>
+          <p class="project-desc">Scrum-based shoe shopping site built during bootcamp. M-Pesa payment integration. 25% off kicks.</p>
+          <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JS</span>
+            <span class="tech-tag">M-Pesa</span>
+          </div>
+          <div class="project-footer">
+            <div class="project-links">
+              <a href="https://keithkirui91.github.io/winvite/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live site <span class="arrow">↗</span></a>
+            </div>
+          </div>
         </div>
       </a>
     </div>
@@ -726,43 +908,51 @@
     <div class="reveal" style="transition-delay:0.1s">
       <div class="sub-section-title">// Moringa Foundation Projects</div>
       <div class="foundation-grid">
-        <a class="project-card" href="https://keithkirui91.github.io/Week2Project/" target="_blank">
-          <img src="img/akhan.PNG" alt="Akan Name" class="project-img" onerror="this.style.display='none'">
-          <div class="project-num">F01</div>
-          <h3 class="project-title">Akan Name</h3>
-          <p class="project-desc">Ghanaian day-based naming generator.</p>
-          <div class="project-links">
-            <a href="https://keithkirui91.github.io/Week2Project/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live ↗</a>
+        <a class="foundation-card" href="https://keithkirui91.github.io/Week2Project/" target="_blank">
+          <div class="foundation-img-wrap">
+            <img src="img/akhan.PNG" alt="Akan Name" class="foundation-img" onerror="this.style.display='none'">
+          </div>
+          <div class="foundation-body">
+            <div class="foundation-label">F01</div>
+            <h3 class="foundation-title">Akan Name</h3>
+            <p class="foundation-desc">Ghanaian day-based naming generator.</p>
+            <a href="https://keithkirui91.github.io/Week2Project/" target="_blank" class="foundation-link" onclick="event.stopPropagation()">Live ↗</a>
           </div>
         </a>
 
-        <a class="project-card" href="https://keithkirui91.github.io/week3project/" target="_blank">
-          <img src="img/delani.PNG" alt="Delani Site" class="project-img" onerror="this.style.display='none'">
-          <div class="project-num">F02</div>
-          <h3 class="project-title">Delani Site</h3>
-          <p class="project-desc">Delani studios website clone.</p>
-          <div class="project-links">
-            <a href="https://keithkirui91.github.io/week3project/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live ↗</a>
+        <a class="foundation-card" href="https://keithkirui91.github.io/week3project/" target="_blank">
+          <div class="foundation-img-wrap">
+            <img src="img/delani.PNG" alt="Delani Site" class="foundation-img" onerror="this.style.display='none'">
+          </div>
+          <div class="foundation-body">
+            <div class="foundation-label">F02</div>
+            <h3 class="foundation-title">Delani Site</h3>
+            <p class="foundation-desc">Delani studios website clone.</p>
+            <a href="https://keithkirui91.github.io/week3project/" target="_blank" class="foundation-link" onclick="event.stopPropagation()">Live ↗</a>
           </div>
         </a>
 
-        <a class="project-card" href="https://keithkirui91.github.io/week4Project/" target="_blank">
-          <img src="img/marathonpizza.PNG" alt="Pizza Shop" class="project-img" onerror="this.style.display='none'">
-          <div class="project-num">F03</div>
-          <h3 class="project-title">Pizza Shop</h3>
-          <p class="project-desc">Marathon Clothing-themed pizza concept site.</p>
-          <div class="project-links">
-            <a href="https://keithkirui91.github.io/week4Project/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live ↗</a>
+        <a class="foundation-card" href="https://keithkirui91.github.io/week4Project/" target="_blank">
+          <div class="foundation-img-wrap">
+            <img src="img/marathonpizza.PNG" alt="Pizza Shop" class="foundation-img" onerror="this.style.display='none'">
+          </div>
+          <div class="foundation-body">
+            <div class="foundation-label">F03</div>
+            <h3 class="foundation-title">Pizza Shop</h3>
+            <p class="foundation-desc">Marathon Clothing-themed pizza concept site.</p>
+            <a href="https://keithkirui91.github.io/week4Project/" target="_blank" class="foundation-link" onclick="event.stopPropagation()">Live ↗</a>
           </div>
         </a>
 
-        <a class="project-card" href="https://keithkirui91.github.io/week1project/" target="_blank">
-          <img src="img/mogul.PNG" alt="About" class="project-img" onerror="this.style.display='none'">
-          <div class="project-num">F04</div>
-          <h3 class="project-title">About</h3>
-          <p class="project-desc">Personal description page — first bootcamp project.</p>
-          <div class="project-links">
-            <a href="https://keithkirui91.github.io/week1project/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live ↗</a>
+        <a class="foundation-card" href="https://keithkirui91.github.io/week1project/" target="_blank">
+          <div class="foundation-img-wrap">
+            <img src="img/mogul.PNG" alt="About" class="foundation-img" onerror="this.style.display='none'">
+          </div>
+          <div class="foundation-body">
+            <div class="foundation-label">F04</div>
+            <h3 class="foundation-title">About</h3>
+            <p class="foundation-desc">Personal description page — first bootcamp project.</p>
+            <a href="https://keithkirui91.github.io/week1project/" target="_blank" class="foundation-link" onclick="event.stopPropagation()">Live ↗</a>
           </div>
         </a>
       </div>
@@ -791,7 +981,7 @@
       <div class="footer-contact">
         <h4>// Contact</h4>
         <p><i class="fa fa-phone"></i> +254 759 018 122</p>
-        <p><i class="fa fa-envelope"></i> keith.kirui44@gmail.com</p>
+        <p><i class="fa fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ee5ebe7fae6a0e5e7fcfbe7babacee9e3efe7e2a0ede1e3">[email&#160;protected]</a></p>
         <div style="margin-top:1.5rem;">
           <a href="Resume.docx" class="btn-outline" download style="font-size:11px;padding:10px 18px;">
             <i class="fa fa-download"></i> Resume
@@ -826,7 +1016,7 @@
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // MOBILE NAV
     const toggle = document.getElementById('navToggle');
     const menu = document.getElementById('mobileMenu');
