@@ -6,7 +6,7 @@
   <title>Keith Siele — Full-Stack Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
@@ -16,16 +16,15 @@
       --bg:        #080c10;
       --bg2:       #0d1117;
       --bg3:       #111820;
-      --border:    rgba(0,104,189,0.18);
-      --green:     #0068bd;
-      --green-dim: #0050a0;
-      --text:      rgb(139,175,175);
-      --text-dim:  #5a8080;
-      --text-mute: #1e3040;
-      --accent:    #0068bd;
+      --border:    rgba(0,200,120,0.12);
+      --green:     #00e87a;
+      --green-dim: #00a858;
+      --text:      #c8d8e8;
+      --text-dim:  #5a7080;
+      --text-mute: #2a3a44;
       --mono:      'Space Mono', monospace;
       --sans:      'Inter', sans-serif;
-      --display:   'Playfair Display', serif;
+      --display:   'Syne', sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -39,17 +38,12 @@
       overflow-x: hidden;
     }
 
-    /* ── SCROLLBAR ── */
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--green-dim); border-radius: 2px; }
+    ::selection { background: var(--green); color: #000; }
 
-    /* ── SELECTION ── */
-    ::selection { background: #0068bd; color: aliceblue; }
-
-    /* ══════════════════════════════════
-       NAV
-    ══════════════════════════════════ */
+    /* ══ NAV ══ */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -63,7 +57,6 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-
     .nav-logo {
       font-family: var(--mono);
       font-size: 13px;
@@ -72,13 +65,7 @@
       letter-spacing: 0.04em;
     }
     .nav-logo span { color: var(--text-dim); }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-
+    .nav-links { display: flex; list-style: none; gap: 2rem; }
     .nav-links a {
       font-family: var(--mono);
       font-size: 12px;
@@ -101,7 +88,6 @@
     }
     .nav-links a:hover { color: var(--green); }
     .nav-links a:hover::after { transform: scaleX(1); }
-
     .nav-github {
       display: flex;
       align-items: center;
@@ -116,8 +102,6 @@
       transition: border-color 0.2s, color 0.2s;
     }
     .nav-github:hover { border-color: var(--green); color: var(--green); }
-
-    /* hamburger */
     .nav-toggle {
       display: none;
       background: none;
@@ -129,13 +113,10 @@
     }
     .nav-toggle span {
       display: block;
-      width: 22px;
-      height: 1.5px;
+      width: 22px; height: 1.5px;
       background: var(--text-dim);
       border-radius: 2px;
-      transition: transform 0.2s, opacity 0.2s;
     }
-
     .mobile-menu {
       display: none;
       position: fixed;
@@ -157,9 +138,7 @@
     }
     .mobile-menu a:hover { color: var(--green); }
 
-    /* ══════════════════════════════════
-       HERO
-    ══════════════════════════════════ */
+    /* ══ HERO ══ */
     #hero {
       min-height: 100vh;
       display: flex;
@@ -168,32 +147,26 @@
       position: relative;
       overflow: hidden;
     }
-
-    /* grid bg */
     #hero::before {
       content: '';
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(0,104,189,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,104,189,0.06) 1px, transparent 1px);
+        linear-gradient(rgba(0,232,122,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,232,122,0.04) 1px, transparent 1px);
       background-size: 60px 60px;
       mask-image: radial-gradient(ellipse 80% 80% at 30% 50%, black 0%, transparent 70%);
     }
-
-    /* radial glow */
     #hero::after {
       content: '';
       position: absolute;
       width: 600px; height: 600px;
       top: 50%; left: -100px;
       transform: translateY(-50%);
-      background: radial-gradient(circle, rgba(0,104,189,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(0,232,122,0.06) 0%, transparent 70%);
       pointer-events: none;
     }
-
     .hero-inner { position: relative; max-width: 760px; }
-
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
@@ -213,7 +186,6 @@
       width: 24px; height: 1px;
       background: var(--green);
     }
-
     .hero-name {
       font-family: var(--display);
       font-size: clamp(3.5rem, 9vw, 7rem);
@@ -224,8 +196,7 @@
       opacity: 0;
       animation: fadeUp 0.7s forwards 0.4s;
     }
-    .hero-name .accent { color: #e03030; }
-
+    .hero-name .accent { color: var(--green); }
     .hero-sub {
       font-family: var(--mono);
       font-size: 13px;
@@ -236,7 +207,6 @@
       opacity: 0;
       animation: fadeUp 0.7s forwards 0.55s;
     }
-
     .hero-desc {
       font-size: 15px;
       color: var(--text-dim);
@@ -246,7 +216,6 @@
       opacity: 0;
       animation: fadeUp 0.7s forwards 0.65s;
     }
-
     .hero-cta {
       display: flex;
       gap: 1rem;
@@ -254,7 +223,6 @@
       opacity: 0;
       animation: fadeUp 0.7s forwards 0.75s;
     }
-
     .btn-primary {
       display: inline-flex;
       align-items: center;
@@ -272,8 +240,7 @@
       cursor: pointer;
       transition: background 0.2s, transform 0.15s;
     }
-    .btn-primary:hover { background: #0082e6; transform: translateY(-1px); }
-
+    .btn-primary:hover { background: #00ff88; transform: translateY(-1px); }
     .btn-outline {
       display: inline-flex;
       align-items: center;
@@ -293,9 +260,7 @@
     }
     .btn-outline:hover { border-color: var(--green); color: var(--green); transform: translateY(-1px); }
 
-    /* ══════════════════════════════════
-       SECTIONS common
-    ══════════════════════════════════ */
+    /* ══ SECTIONS ══ */
     section { padding: 7rem 5vw; }
     .section-label {
       font-family: var(--mono);
@@ -315,7 +280,6 @@
       height: 1px;
       background: var(--green-dim);
     }
-
     .section-title {
       font-family: var(--display);
       font-size: clamp(2rem, 4vw, 3.2rem);
@@ -326,22 +290,16 @@
       margin-bottom: 3rem;
     }
 
-    /* ══════════════════════════════════
-       ABOUT
-    ══════════════════════════════════ */
-    #about {
-      background: var(--bg2);
-      position: relative;
-    }
+    /* ══ ABOUT ══ */
+    #about { background: var(--bg2); position: relative; }
     #about::before {
       content: '';
       position: absolute;
       right: 0; top: 0; bottom: 0;
       width: 40%;
-      background: linear-gradient(90deg, transparent, rgba(0,104,189,0.03));
+      background: linear-gradient(90deg, transparent, rgba(0,232,122,0.015));
       pointer-events: none;
     }
-
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -349,38 +307,26 @@
       align-items: start;
       max-width: 1100px;
     }
-
     .about-text p {
       font-size: 15px;
       color: var(--text-dim);
       margin-bottom: 1.2rem;
       line-height: 1.8;
     }
-    .about-text a {
-      color: var(--green);
-      text-decoration: none;
-    }
+    .about-text a { color: var(--green); text-decoration: none; }
     .about-text a:hover { text-decoration: underline; }
-
     .about-highlight {
       font-family: var(--mono);
       font-size: 12px;
-      color: rgb(139,175,175);
-      background: rgba(0,104,189,0.07);
-      border: 1px solid rgba(0,104,189,0.25);
+      color: var(--green);
+      background: rgba(0,232,122,0.07);
+      border: 1px solid rgba(0,232,122,0.18);
       border-radius: 4px;
       padding: 12px 16px;
       margin-top: 1.5rem;
       letter-spacing: 0.04em;
     }
-
-    .skills-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
+    .skills-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
     .skill-item {
       font-family: var(--mono);
       font-size: 13px;
@@ -391,19 +337,15 @@
       letter-spacing: 0.04em;
       transition: border-color 0.2s, background 0.2s, color 0.2s;
       cursor: default;
-      position: relative;
     }
     .skill-item:hover {
       border-left-color: var(--green);
-      background: rgba(0,104,189,0.08);
-      color: aliceblue;
+      background: rgba(0,232,122,0.06);
+      color: #fff;
     }
 
-    /* ══════════════════════════════════
-       PROJECTS
-    ══════════════════════════════════ */
+    /* ══ PROJECTS ══ */
     #projects { background: var(--bg); }
-
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -414,7 +356,6 @@
       overflow: hidden;
       margin-bottom: 5rem;
     }
-
     .project-card {
       background: var(--bg2);
       padding: 2rem;
@@ -438,7 +379,6 @@
     }
     .project-card:hover { background: var(--bg3); }
     .project-card:hover::before { transform: scaleX(1); }
-
     .project-img {
       width: 100%;
       aspect-ratio: 16/9;
@@ -451,7 +391,6 @@
       display: block;
     }
     .project-card:hover .project-img { opacity: 1; }
-
     .project-num {
       font-family: var(--mono);
       font-size: 11px;
@@ -459,7 +398,6 @@
       letter-spacing: 0.1em;
       margin-bottom: 0.5rem;
     }
-
     .project-title {
       font-family: var(--display);
       font-size: 1.2rem;
@@ -468,36 +406,25 @@
       margin-bottom: 0.6rem;
       letter-spacing: -0.01em;
     }
-
     .project-desc {
       font-size: 13px;
       color: var(--text-dim);
       line-height: 1.65;
       margin-bottom: 1.2rem;
     }
-
-    .project-tech {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 1.2rem;
-    }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.2rem; }
     .tech-tag {
       font-family: var(--mono);
       font-size: 10px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #6ab4f5;
-      background: rgba(0,104,189,0.1);
-      border: 1px solid rgba(0,104,189,0.25);
+      color: var(--green-dim);
+      background: rgba(0,232,122,0.06);
+      border: 1px solid rgba(0,232,122,0.15);
       padding: 3px 8px;
       border-radius: 3px;
     }
-
-    .project-links {
-      display: flex;
-      gap: 1rem;
-    }
+    .project-links { display: flex; gap: 1rem; }
     .project-link {
       font-family: var(--mono);
       font-size: 11px;
@@ -509,9 +436,6 @@
       transition: color 0.2s;
     }
     .project-link:hover { color: var(--green); }
-    .project-link .arrow { font-size: 13px; }
-
-    /* sub-section title */
     .sub-section-title {
       font-family: var(--mono);
       font-size: 11px;
@@ -522,7 +446,6 @@
       padding-bottom: 0.75rem;
       border-bottom: 1px solid var(--border);
     }
-
     .foundation-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -533,22 +456,18 @@
       overflow: hidden;
     }
 
-    /* ══════════════════════════════════
-       FOOTER / CONTACT
-    ══════════════════════════════════ */
+    /* ══ FOOTER ══ */
     footer {
       background: var(--bg2);
       border-top: 1px solid var(--border);
       padding: 5rem 5vw 3rem;
     }
-
     .footer-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 3rem;
       margin-bottom: 4rem;
     }
-
     .footer-brand .brand-name {
       font-family: var(--display);
       font-size: 2rem;
@@ -556,14 +475,9 @@
       color: #fff;
       margin-bottom: 0.5rem;
     }
-    .footer-brand .brand-name span { color: var(--green); }
-    .footer-brand p {
-      font-size: 13px;
-      color: var(--text-dim);
-      max-width: 240px;
-    }
-
-    .footer-contact h4 {
+    .footer-brand .brand-name .accent { color: var(--green); }
+    .footer-brand p { font-size: 13px; color: var(--text-dim); max-width: 240px; }
+    .footer-contact h4, .footer-form h4 {
       font-family: var(--mono);
       font-size: 11px;
       letter-spacing: 0.14em;
@@ -580,21 +494,7 @@
       gap: 8px;
     }
     .footer-contact p i { color: var(--green-dim); width: 14px; }
-
-    .footer-form h4 {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 1.2rem;
-    }
-
-    .contact-form-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+    .contact-form-inner { display: flex; flex-direction: column; gap: 10px; }
     .contact-form-inner input,
     .contact-form-inner textarea {
       background: var(--bg3);
@@ -613,13 +513,7 @@
     .contact-form-inner input:focus,
     .contact-form-inner textarea:focus { border-color: var(--green); }
     .contact-form-inner textarea { resize: vertical; min-height: 80px; }
-
-    .footer-nav {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
+    .footer-nav { list-style: none; display: flex; gap: 2rem; flex-wrap: wrap; }
     .footer-nav a {
       font-family: var(--mono);
       font-size: 11px;
@@ -630,7 +524,6 @@
       transition: color 0.2s;
     }
     .footer-nav a:hover { color: var(--green); }
-
     .footer-bottom {
       border-top: 1px solid var(--border);
       padding-top: 2rem;
@@ -646,11 +539,7 @@
       color: var(--text-mute);
       letter-spacing: 0.06em;
     }
-    .footer-bottom p em {
-      color: var(--green-dim);
-      font-style: normal;
-    }
-
+    .footer-bottom p em { color: var(--green-dim); font-style: italic; }
     .back-top {
       display: flex;
       align-items: center;
@@ -664,39 +553,27 @@
       transition: color 0.2s;
     }
     .back-top:hover { color: var(--green); }
-    .back-top i { font-size: 14px; }
 
-    /* ══════════════════════════════════
-       ANIMATIONS
-    ══════════════════════════════════ */
+    /* ══ ANIMATIONS ══ */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(18px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
     .reveal {
       opacity: 0;
       transform: translateY(24px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1; transform: none; }
-    }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
 
-    /* ══════════════════════════════════
-       RESPONSIVE
-    ══════════════════════════════════ */
+    /* ══ RESPONSIVE ══ */
     @media (max-width: 1024px) {
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .projects-grid { grid-template-columns: 1fr 1fr; }
       .foundation-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
-
     @media (max-width: 680px) {
       .nav-links, .nav-github { display: none; }
       .nav-toggle { display: flex; }
@@ -704,13 +581,12 @@
       .foundation-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; text-align: center; }
-      .skills-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ── NAV ── -->
+  <!-- NAV -->
   <nav>
     <a href="#hero" class="nav-logo">KS<span>.dev</span></a>
     <ul class="nav-links">
@@ -719,7 +595,7 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="https://github.com/keithkirui91" target="_blank" class="nav-github" style="text-decoration:none">
+    <a href="https://github.com/keithkirui91" target="_blank" class="nav-github">
       <i class="fa fa-github"></i> GitHub
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -736,7 +612,7 @@
     </ul>
   </div>
 
-  <!-- ── HERO ── -->
+  <!-- HERO -->
   <section id="hero">
     <div class="hero-inner">
       <div class="hero-eyebrow">Full-Stack Developer</div>
@@ -747,13 +623,13 @@
         self-taught fundamentals with bootcamp training and Computer Science studies.
       </p>
       <div class="hero-cta">
-        <a href="#projects" class="btn-primary">View Projects <span>→</span></a>
+        <a href="#projects" class="btn-primary">View Projects →</a>
         <a href="Resume.docx" class="btn-outline" download>Download CV</a>
       </div>
     </div>
   </section>
 
-  <!-- ── ABOUT ── -->
+  <!-- ABOUT -->
   <section id="about">
     <div class="section-label">01 — About</div>
     <h2 class="section-title">Who I Am</h2>
@@ -776,7 +652,7 @@
         </div>
       </div>
       <div class="reveal" style="transition-delay:0.1s">
-        <p style="font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:1rem;background:var(--green);color:aliceblue;display:inline-block;padding:4px 12px;border-radius:3px;">Skills</p>
+        <p style="font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;background:var(--green);color:#000;display:inline-block;padding:4px 12px;border-radius:3px;margin-bottom:1rem;">Skills</p>
         <ul class="skills-list">
           <li class="skill-item">HTML</li>
           <li class="skill-item">CSS</li>
@@ -791,15 +667,14 @@
     </div>
   </section>
 
-  <!-- ── PROJECTS ── -->
+  <!-- PROJECTS -->
   <section id="projects">
     <div class="section-label">02 — Work</div>
     <h2 class="section-title">Selected Projects</h2>
 
     <div class="projects-grid reveal">
-
       <a class="project-card" href="https://keithkirui91.github.io/winvite/" target="_blank">
-        <img src="img/invites.PNG" alt="Invites project" class="project-img" onerror="this.style.display='none'">
+        <img src="img/invites.PNG" alt="Invites" class="project-img" onerror="this.style.display='none'">
         <div class="project-num">01 / 03</div>
         <h3 class="project-title">Invites</h3>
         <p class="project-desc">Web-based event invitation platform with working RSVP mail handled via Mailchimp API.</p>
@@ -810,8 +685,8 @@
           <span class="tech-tag">Mailchimp</span>
         </div>
         <div class="project-links">
-          <a href="https://keithkirui91.github.io/winvite/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live 1 <span class="arrow">↗</span></a>
-          <a href="https://keithkirui91.github.io/birthdayinvite/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live 2 <span class="arrow">↗</span></a>
+          <a href="https://keithkirui91.github.io/winvite/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live 1 ↗</a>
+          <a href="https://keithkirui91.github.io/birthdayinvite/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live 2 ↗</a>
         </div>
       </a>
 
@@ -826,7 +701,7 @@
           <span class="tech-tag">JS</span>
         </div>
         <div class="project-links">
-          <a href="https://magimakennels.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live site <span class="arrow">↗</span></a>
+          <a href="https://magimakennels.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live site ↗</a>
         </div>
       </a>
 
@@ -842,24 +717,22 @@
           <span class="tech-tag">M-Pesa</span>
         </div>
         <div class="project-links">
-          <a href="https://keithkirui91.github.io/winvite/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live site <span class="arrow">↗</span></a>
+          <a href="https://keithkirui91.github.io/winvite/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live site ↗</a>
         </div>
       </a>
-
     </div>
 
     <!-- Foundation Projects -->
-    <div class="reveal" style="transition-delay:0.15s">
+    <div class="reveal" style="transition-delay:0.1s">
       <div class="sub-section-title">// Moringa Foundation Projects</div>
       <div class="foundation-grid">
-
         <a class="project-card" href="https://keithkirui91.github.io/Week2Project/" target="_blank">
           <img src="img/akhan.PNG" alt="Akan Name" class="project-img" onerror="this.style.display='none'">
           <div class="project-num">F01</div>
           <h3 class="project-title">Akan Name</h3>
           <p class="project-desc">Ghanaian day-based naming generator.</p>
           <div class="project-links">
-            <a href="https://keithkirui91.github.io/Week2Project/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live <span class="arrow">↗</span></a>
+            <a href="https://keithkirui91.github.io/Week2Project/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live ↗</a>
           </div>
         </a>
 
@@ -869,7 +742,7 @@
           <h3 class="project-title">Delani Site</h3>
           <p class="project-desc">Delani studios website clone.</p>
           <div class="project-links">
-            <a href="https://keithkirui91.github.io/week3project/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live <span class="arrow">↗</span></a>
+            <a href="https://keithkirui91.github.io/week3project/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live ↗</a>
           </div>
         </a>
 
@@ -879,7 +752,7 @@
           <h3 class="project-title">Pizza Shop</h3>
           <p class="project-desc">Marathon Clothing-themed pizza concept site.</p>
           <div class="project-links">
-            <a href="https://keithkirui91.github.io/week4Project/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live <span class="arrow">↗</span></a>
+            <a href="https://keithkirui91.github.io/week4Project/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live ↗</a>
           </div>
         </a>
 
@@ -889,26 +762,27 @@
           <h3 class="project-title">About</h3>
           <p class="project-desc">Personal description page — first bootcamp project.</p>
           <div class="project-links">
-            <a href="https://keithkirui91.github.io/week1project/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live <span class="arrow">↗</span></a>
+            <a href="https://keithkirui91.github.io/week1project/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live ↗</a>
           </div>
         </a>
-
       </div>
     </div>
   </section>
 
-  <!-- ── FOOTER / CONTACT ── -->
+  <!-- FOOTER / CONTACT -->
   <footer id="contact">
     <div class="section-label">03 — Contact</div>
-    <h2 class="section-title" style="margin-bottom:3rem;">Get In Touch</h2>
+    <h2 class="section-title">Get In Touch</h2>
 
     <div class="footer-grid reveal">
-
       <div class="footer-brand">
-        <div class="brand-name">Keith <span style="color:#e03030;">Siele</span><span style="color:var(--text-dim)">.</span></div>
+        <div class="brand-name">Keith <span class="accent">Siele</span>.</div>
         <p>Full-stack developer. Building things for the web, one commit at a time.</p>
         <div style="margin-top:1.5rem;">
-          <a href="https://github.com/keithkirui91" target="_blank" style="color:var(--text-dim);text-decoration:none;font-size:22px;margin-right:16px;transition:color 0.2s" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='var(--text-dim)'">
+          <a href="https://github.com/keithkirui91" target="_blank"
+            style="color:var(--text-dim);text-decoration:none;font-size:22px;transition:color 0.2s"
+            onmouseover="this.style.color='var(--green)'"
+            onmouseout="this.style.color='var(--text-dim)'">
             <i class="fa fa-github"></i>
           </a>
         </div>
@@ -917,7 +791,7 @@
       <div class="footer-contact">
         <h4>// Contact</h4>
         <p><i class="fa fa-phone"></i> +254 759 018 122</p>
-        <p><i class="fa fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4d26282439256326243f382479790d2a202c2421632e2220">[email&#160;protected]</a></p>
+        <p><i class="fa fa-envelope"></i> keith.kirui44@gmail.com</p>
         <div style="margin-top:1.5rem;">
           <a href="Resume.docx" class="btn-outline" download style="font-size:11px;padding:10px 18px;">
             <i class="fa fa-download"></i> Resume
@@ -932,11 +806,12 @@
           method="post" target="_blank" class="contact-form-inner">
           <input type="email" name="EMAIL" placeholder="your@email.com" required>
           <textarea name="FNAME" placeholder="Your message…" rows="3"></textarea>
-          <div style="position:absolute;left:-5000px;aria-hidden:true"><input type="text" name="b_922a4af04c50bd657ec3fc125_4956194270" tabindex="-1" value=""></div>
+          <div style="position:absolute;left:-5000px;" aria-hidden="true">
+            <input type="text" name="b_922a4af04c50bd657ec3fc125_4956194270" tabindex="-1" value="">
+          </div>
           <button type="submit" class="btn-primary" style="justify-content:center;">Send Message →</button>
         </form>
       </div>
-
     </div>
 
     <div class="footer-bottom">
@@ -951,14 +826,14 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // ── MOBILE NAV ──
+  <script>
+    // MOBILE NAV
     const toggle = document.getElementById('navToggle');
     const menu = document.getElementById('mobileMenu');
     toggle.addEventListener('click', () => menu.classList.toggle('open'));
     function closeMobile() { menu.classList.remove('open'); }
 
-    // ── SCROLL REVEAL ──
+    // SCROLL REVEAL — with hard fallback so nothing stays hidden
     const reveals = document.querySelectorAll('.reveal');
     const showAll = () => reveals.forEach(el => el.classList.add('visible'));
 
@@ -972,21 +847,24 @@
         });
       }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
       reveals.forEach(el => io.observe(el));
-      // Hard fallback — reveal everything after 800ms in case observer misfires
       setTimeout(showAll, 800);
     } else {
       showAll();
     }
 
- // NAV active state on scroll
-const sections = document.querySelectorAll('section[id], footer[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id');
-  });
-  navLinks.forEach(a => {
-    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--green)' : '';
-  });
-});
+    // NAV active state on scroll
+    const sections = document.querySelectorAll('section[id], footer[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id');
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--green)' : '';
+      });
+    });
+  </script>
+
+</body>
+</html>
